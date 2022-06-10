@@ -1,0 +1,67 @@
+
+<div class="container">
+  <u>
+    <i>
+      <h3>Sign up Form</h3>
+    </i>
+  </u>
+  <br>
+
+  <form [formGroup]="formValue" (ngSubmit)="onSubmit()" >
+
+    <!--Company Name-->
+
+    <div class="form-group">
+      <label for="CompanyName"> Company Name:</label>
+      <input class="form-control" name="CompanyName" id="CompnayName" type="text" formControlName="CompanyName" >
+    </div>
+    
+
+    <!--Comapany PAN-->
+
+    <div class="form-group">
+      <label for="CompanyPAN">Company PAN:</label>
+      <input type="text" id="CompanyPAN" name="CompanyPAN" class="form-control"  formControlName="CompanyPAN">
+    </div>
+
+<!--Compnay GST-->
+
+  <div class="form-group">
+    <label for="CompanyGST">Company GST (Optional):</label>
+      <input type="text" id="CompanyGST" name="CompanyGST" class="form-control"  formControlName="CompanyGST" >
+  </div>
+
+  <!--Contact person name-->
+
+  <div class="form-group">
+    <label for="ContactPerson">Point of Contact Person Name</label>
+    <input class="form-control" name="ContactPerson" id="ContactPerson" formControlName="ContactPerson">
+  </div>
+
+  <!--Company Email-->
+
+    <div class="form-group">
+      <label for="CompanyEmail">Company Email(we can accept a non-official Id) :</label>
+    <input class="form-control" name="CompanyEmail" id="CompanyEmail" formControlName="CompanyEmail">
+    <span style="color:red" *ngIf="CompanyEmail && CompanyEmail.invalid">invalid</span>
+  
+  </div>
+
+    <!--Password-->
+
+    <div class="form-group">
+      <label for="Password">Password :</label>
+    <input type="password" class="form-control" name="Password" id="Password" formControlName="Password">
+    </div>
+
+    <!--Contact Number-->
+    <div class="form-group">
+      <label for="ContactNo">Contact Number :</label>
+    <input class="form-control" name="ContactNo" id="ContactNo" formControlName="ContactNo">
+
+    </div>
+
+
+  <button [disabled]="formValue.invalid" id="submit" class="btn btn-primary" >submit</button>
+  </form>
+  </div>
